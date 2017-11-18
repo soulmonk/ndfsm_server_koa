@@ -1,0 +1,23 @@
+[
+  {
+    "name": "favicon",
+    "weight": 100,
+    "enabled": false
+  },
+  {
+    "name": "logger",
+    "weight": 300
+  },
+  {
+    "name": "responseHandler",
+    "weight": 350
+  },
+  {
+    "name": "errors",
+    "weight": 400
+  },
+  {
+    "name": "bodyParser",
+    "weight": 500
+  }
+]

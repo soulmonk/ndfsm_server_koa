@@ -83,15 +83,15 @@ const logger = (function(config) {
   };
   const exports = {};
 
-  const logger = exports.logger = new winston.Logger({
+  const logger = new winston.Logger({
     transports: [
       new winston.transports.Console({
         colorize: true,
-        level: 'debug',
+        level: 'emerg',
         timestamp: timestamp
       }),
       new winston.transports.File({
-        level: 'debug',
+        level: 'emerg',
         timestamp: timestamp,
         filename: path.join(config.root, 'logs/logs.log'),
         maxsize: 5242880,
@@ -114,7 +114,7 @@ const logger = (function(config) {
     logger.remove(winston.transports.Console);
     logger.remove(winston.transports.File);
   };
-  return logger.extend(exports);
+  return logger;
 })(require('config'));
 
 //logger.disable();
