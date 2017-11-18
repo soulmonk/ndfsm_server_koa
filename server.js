@@ -7,6 +7,8 @@ const app = new Koa();
 
 const logger = require('./libs/logger');
 
+require('./bootsrap');
+
 require('./middleware')(app);
 require('./routes')(app);
 

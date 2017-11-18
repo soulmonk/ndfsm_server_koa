@@ -85,9 +85,9 @@ function responseHandler() {
       ctx.res.error(code, message);
     };
 
-    ctx.res.notImplemented = (code, message) => {
+    ctx.res.notImplemented = () => {
       ctx.status = statusCodes.NOT_IMPLEMENTED;
-      ctx.res.error(code, message);
+      ctx.res.error(null, 'Note Implemented');
     };
     await next();
   };
