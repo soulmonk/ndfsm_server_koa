@@ -7,7 +7,6 @@ function init(app) {
   const router = new Router();
 
   router.get('/', require('../controllers/api').version);
-
   router.use('/notes', restRouter(require('../controllers/notes')));
 
   app

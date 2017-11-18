@@ -6,7 +6,7 @@ async function errors(ctx, next) {
   try {
    await next();
   } catch (err) {
-    logger.error('Something went wrong', err.message || err);
+    logger.error('Something went wrong', err);
     ctx.res.fail(null, 'Something went wrong');
   }
 }

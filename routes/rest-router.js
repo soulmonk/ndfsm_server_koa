@@ -7,11 +7,11 @@ function restRouter(Controller) {
 
   const router = new Router();
 
-  router.get('/', controller.list);
-  router.get('/:id', controller.get);
-  router.post('/', controller.create);
-  router.put('/:id', controller.update);
-  router.delete('/:id', controller.delete);
+  router.get('/', controller.list.bind(controller));
+  router.get('/:id', controller.get.bind(controller));
+  router.post('/', controller.create.bind(controller));
+  router.put('/:id', controller.update.bind(controller));
+  router.delete('/:id', controller.delete.bind(controller));
 
   return router.routes();
 }
