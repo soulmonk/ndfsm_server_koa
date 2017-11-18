@@ -45,3 +45,5 @@ class RestBase {
     ctx.res.notImplemented();
   }
 }
+
+module.exports = RestBase;

@@ -1,6 +1,7 @@
 'use strict';
 
 const Note = require('../models/note');
+const RestBase = require('./rest-base');
 
 class Notes extends RestBase {
 
