@@ -11,6 +11,7 @@ function init(app) {
 
   router.get('/api', require('../controllers/api').version);
   router.use('/api/notes', restRouter(require('../controllers/notes')));
+  router.use('/api/todo', restRouter(require('../controllers/todo')));
 
   router.get('*', async (ctx) => {
     const templatePath = path.join(config.get('dist.templates'), 'index.html');
