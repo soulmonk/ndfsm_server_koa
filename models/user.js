@@ -5,11 +5,11 @@ const crypto = require('crypto');
 const config = require('config');
 
 const UserSchema = new mongoose.Schema({
-  login: {
+  username: {
     type: String,
-    required: 'Login required'
+    required: 'Username required'
   },
-  hashPassword: {
+  passwordHash: {
     type: String,
     required: 'Password required',
   },
@@ -37,7 +37,7 @@ UserSchema
       this.invalidate('password', 'No password');
     }
 
-    this.hashPassword = crypt(password);
+    this.passwordHash = crypt(password);
   });
 
 UserSchema.methods.checkPassword = function (password) {

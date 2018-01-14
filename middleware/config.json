@@ -23,5 +23,9 @@
   {
     "name": "bodyParser",
     "weight": 500
+  },
+  {
+    "name": "passportInitialization",
+    "weight": 900
   }
 ]

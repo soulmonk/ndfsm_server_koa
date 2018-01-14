@@ -7,7 +7,7 @@ class RestBase {
 
   // abstract
   get model () {
-    throw new Error('Need override');
+    throw new Error('Abstract');
   }
 
   async list(ctx) {
