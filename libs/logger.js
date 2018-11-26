@@ -55,7 +55,7 @@ const logger = (function(config) {
     }
   };
 
-  const logger = new winston.Logger({
+  const logger = winston.createLogger({
     transports: [
       new winston.transports.Console({
         colorize: true,

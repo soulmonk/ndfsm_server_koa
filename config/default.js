@@ -7,7 +7,7 @@ module.exports = {
 
   db: {
     url: 'mongodb://localhost/ndfsm_server',
-    options: { useMongoClient: true }
+    options: {}
   },
 
   port: 4540,
