@@ -6,6 +6,7 @@ const router = new Router();
 const authController = require('../controllers/auth');
 
 router.post('/login', authController.login, authController.generateToken, authController.respond);
+router.get('/me/from/token', authController.me);
 router.post('/logout', authController.logout);
 
 module.exports = router.routes();
