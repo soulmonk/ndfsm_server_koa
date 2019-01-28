@@ -1,10 +1,14 @@
+// TODO temporary, easy check;
+
 function authenticated(levels = []) {
-  return (ctx, next) => {
+  return async (ctx, next) => {
     if (ctx.state.user) {
+
       if (levels.length) {
         // TODO check user level
       }
-      return next();
+
+      return await next();
     }
     ctx.res.forbidden();
   }

@@ -55,6 +55,8 @@ const logger = (function(config) {
     }
   };
 
+
+  // TODO chang console transport
   const logger = winston.createLogger({
     transports: [
       new winston.transports.Console({

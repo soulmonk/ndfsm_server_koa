@@ -1,13 +1,15 @@
 'use strict';
 
+const logger = require('../libs/logger');
+
 const notes = [];
 let id = 0;
 
 class TempNotes {
 
   async create(ctx) {
+    const {text} = ctx.request.body;
 
-    const {text} = ctx.body;
     const model = {
       id: id++,
       text

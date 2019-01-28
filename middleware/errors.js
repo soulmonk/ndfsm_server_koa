@@ -9,7 +9,9 @@ async function errors(ctx, next) {
 
     await next();
   } catch (err) {
-    logger.error('Something went wrong', err);
+    logger.error('Something went wrong: ' + err.toString());
+    logger.error(err.stack);
+
     ctx.res.fail(null, 'Something went wrong');
   }
 }

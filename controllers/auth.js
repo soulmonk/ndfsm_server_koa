@@ -1,9 +1,9 @@
 'use strict';
 
 const config = require('config');
-const passport = require('koa-passport');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../models/user');
+const passport = require('koa-passport');
 
 async function me(ctx) {
 
@@ -21,20 +21,21 @@ async function me(ctx) {
       throw err;
 
     //return user using the id from w/in JWTToken
-    const userModel = UserModel.findOne({
-      '_id': user._id
-    });
+    UserModel.findOne({
+      '_id': user.id
+    }).then(userModel => {
+      if (!userModel) {
+        ctx.res.notFound();
+        return;
+      }
 
-    if (!userModel) {
-      ctx.res.notFound();
-    }
-
-    ctx.res.success({
-      user: {
-        id: user._id,
-        username: user.username
-      },
-      token: token
+      ctx.res.success({
+        user: {
+          id: userModel._id,
+          username: userModel.username
+        },
+        token: token
+      });
     });
   })
 }
