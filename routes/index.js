@@ -14,6 +14,8 @@ function init(app) {
   router.use('/api/notes', restRouter(require('../controllers/notes')));
   router.use('/api/todo', restRouter(require('../controllers/todo')));
 
+  router.use('/api/temp-notes', restRouter(require('../controllers/temp-notes')));
+
   router.get('*', async (ctx) => {
     const templatePath = path.join(config.get('dist.templates'), 'index.html');
     if (!await fs.exists(templatePath)) {
