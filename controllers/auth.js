@@ -8,7 +8,7 @@ const UserModel = require('../models/user');
 async function me(ctx) {
 
   // check header or url parameters or post parameters for token
-  var token = ctx.request.body.token || ctx.req.query.token || ctx.req.headers['x-access-token'];
+  var token = ctx.request.body.token || ctx.request.query.token || ctx.request.headers['x-access-token'];
   if (!token) {
     return ctx.res.status(401).json({
       message: 'Must pass token'
