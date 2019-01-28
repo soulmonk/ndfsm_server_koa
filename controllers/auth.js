@@ -30,7 +30,10 @@ async function me(ctx) {
     }
 
     ctx.res.success({
-      user: userModel,
+      user: {
+        id: user._id,
+        username: user.username
+      },
       token: token
     });
   })
