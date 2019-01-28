@@ -17,15 +17,15 @@ function restRouter(Controller) {
   }
 
   if (typeof controller.create === 'function') {
-    router.post('/', authenticated, controller.create.bind(controller));
+    router.post('/', authenticated(), controller.create.bind(controller));
   }
 
   if (typeof controller.update === 'function') {
-    router.put('/:id', authenticated, controller.update.bind(controller));
+    router.put('/:id', authenticated(), controller.update.bind(controller));
   }
 
   if (typeof controller.delete === 'function') {
-    router.delete('/:id', authenticated, controller.delete.bind(controller));
+    router.delete('/:id', authenticated(), controller.delete.bind(controller));
   }
 
   return router.routes();
