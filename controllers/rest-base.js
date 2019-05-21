@@ -15,11 +15,11 @@ class RestBase {
   }
 
   async get(ctx) {
-    const note = await this.model.findOne({_id: ctx.params.id}, '-__v');
-    if (!note) {
+    const model = await this.model.findOne({_id: ctx.params.id}, '-__v');
+    if (!model) {
       return ctx.res.notFound();
     }
-    ctx.res.success();
+    ctx.res.success(model);
   }
 
   async update(ctx) {
