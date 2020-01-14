@@ -1,8 +1,5 @@
 'use strict';
 
-const path = require('path');
-process.env.NODE_CONFIG_DIR = path.join(__dirname, '../config');
-
 const config = require('config');
 
 const mongoose = require('mongoose');

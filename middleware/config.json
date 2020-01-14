@@ -17,10 +17,6 @@
     "weight": 400
   },
   {
-    "name": "static",
-    "weight": 450
-  },
-  {
     "name": "bodyParser",
     "weight": 500
   },
