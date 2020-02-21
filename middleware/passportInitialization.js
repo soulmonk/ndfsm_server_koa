@@ -5,7 +5,6 @@ const Strategy = require('passport-local');
 const UserModel = require('../models/user');
 const logger = require('../libs/logger');
 
-// UserModel.create({username: 'admin', password: '321654'});
 passsport.use(new Strategy((username, password, done) => {
   if (!username || !password) {
     return done('Wrong credentials!', false);

@@ -42,7 +42,14 @@ class RestBase {
   }
 
   async delete(ctx) {
-    ctx.res.notImplemented();
+    const model = await this.model.findOne({_id: ctx.params.id}, '-__v');
+    if (!model) {
+      return ctx.res.notFound();
+    }
+
+    await model.deleteOne()
+
+    ctx.res.success();
   }
 }
 
