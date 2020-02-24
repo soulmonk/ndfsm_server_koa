@@ -1,6 +1,7 @@
-'use strict';
+'use strict'
 
-const path = require('path');
+const path = require('path')
+const { secret } = require('./jwt')
 
 module.exports = {
 
@@ -13,8 +14,6 @@ module.exports = {
   },
 
   port: 4540,
-
-  secret: require('fs').readFileSync(path.join(__dirname, '../secret-key.txt'), 'utf8'),
-
+  secret,
   root: path.join(__dirname, '..')
-};
+}
